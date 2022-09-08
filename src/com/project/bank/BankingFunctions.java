@@ -36,6 +36,10 @@ public class BankingFunctions extends HomePage{
 			{
 				throw new BankingExceptions("Insufficient Balance");//custom exception
 			}
+			else if(withdrawAmount<=0)
+			{
+				throw new BankingExceptions("Please enter amount in correct fromat");//custom exception
+			}
 			else
 			{
 			PreparedStatement updateStatement=con.prepareStatement("UPDATE users set amount=? WHERE account_number=?");
